@@ -19,6 +19,8 @@ import { AddCustomItemModal } from '../components/AddCustomItemModal';
 import { StatsSummaryModal } from '../components/StatsSummaryModal';
 import { ShareModal } from '../components/ShareModal';
 import { NotesModal } from '../components/NotesModal';
+import { StructuredData } from '../components/StructuredData';
+import { SeoFaqSection } from '../components/SeoFaqSection';
 
 export default function Home() {
   const {
@@ -111,6 +113,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-cosmic-grid flex flex-col bg-zinc-950 text-zinc-100 selection:bg-emerald-500 selection:text-zinc-950">
       
+      {/* Schema.org Structured Data for Google Rich Snippets */}
+      <StructuredData />
+
       {/* Hidden File Input for JSON restore */}
       <input
         type="file"
@@ -224,6 +229,9 @@ export default function Home() {
             onDeleteCustom={deleteCustomItem}
           />
         )}
+
+        {/* SEO FAQ & Lore Breakdown Section */}
+        <SeoFaqSection />
 
       </main>
 
