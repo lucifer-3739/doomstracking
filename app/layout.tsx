@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Road to Doomsday - Avengers: Doomsday 1-to-N Watchlist & Tracker",
   description: "Master 1 to N viewing order for MCU movies and Disney+ web series leading directly to Avengers: Doomsday. Track completed and pending titles, watch time, and Doctor Doom lore.",
-  keywords: ["Avengers Doomsday", "MCU viewing order", "Doctor Doom", "Robert Downey Jr", "Marvel Watchlist", "Secret Wars", "Multiverse Saga"]
+  keywords: ["Avengers Doomsday", "MCU viewing order", "Doctor Doom", "Robert Downey Jr", "Marvel Watchlist", "Secret Wars", "Multiverse Saga"],
+  verification: {
+    google: "googleb3c5ff019a78c86a"
+  }
 };
 
 export default function RootLayout({
