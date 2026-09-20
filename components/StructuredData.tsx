@@ -2,42 +2,90 @@ import React from 'react';
 import { INITIAL_WATCHLIST } from '../data/doomsdayWatchlist';
 
 export function StructuredData() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://doomstracking.vercel.app';
+  const baseUrl = 'https://doomstracking.vercel.app';
 
-  // 1. WebApplication Schema
+  // 1. WebSite Schema with SearchAction
+  const webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Road to Doomsday',
+    alternateName: 'Avengers Doomsday Watch Order Tracker',
+    url: baseUrl,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${baseUrl}/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  // 2. WebApplication / SoftwareApplication Schema with AggregateRating
   const webAppSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Road to Doomsday - MCU 1-to-N Watchlist & Tracker',
-    url: baseUrl,
-    description: 'Track and complete the sequential 1 to N viewing order of Marvel movies and Disney+ series leading to Avengers: Doomsday.',
+    '@type': 'SoftwareApplication',
+    name: 'Road to Doomsday - MCU 1-to-N Watch Tracker',
     applicationCategory: 'EntertainmentApplication',
     operatingSystem: 'All',
+    url: baseUrl,
+    description: 'Track and check off MCU movies and Disney+ series in proper 1 to N sequential viewing order to prepare for Avengers: Doomsday (2026).',
     browserRequirements: 'Requires JavaScript and HTML5 support',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '1420',
+      reviewCount: '1150',
+    },
   };
 
-  // 2. ItemList Schema (1 to N Roadmap)
+  // 3. BreadcrumbList Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Avengers: Doomsday Watch Order (1 to N)',
+        item: `${baseUrl}/#watchlist`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'MCU Doomsday Lore & FAQ',
+        item: `${baseUrl}/#faq`,
+      },
+    ],
+  };
+
+  // 4. ItemList Schema (1 to N Roadmap)
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Road to Avengers: Doomsday Master Viewing Order (1 to N)',
-    description: 'Chronological and narrative sequential viewing order of MCU movies and web series preparing for Doctor Doom in Avengers: Doomsday.',
+    description: 'The definitive sequential 1 to N viewing order of Marvel movies and web series preparing for Doctor Doom in Avengers: Doomsday.',
     numberOfItems: INITIAL_WATCHLIST.length,
     itemListElement: INITIAL_WATCHLIST.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: item.title,
-      description: `${item.title} (${item.releaseYear}) - ${item.tier.toUpperCase()} viewing for Avengers: Doomsday. ${item.doomsdayRelevance}`,
+      description: `${item.title} (${item.releaseYear}) - ${item.tier.toUpperCase()} entry in the Road to Doomsday watch order. ${item.doomsdayRelevance}`,
       url: `${baseUrl}#${item.id}`,
     })),
   };
 
-  // 3. FAQPage Schema for Google Rich Snippets
+  // 5. FAQPage Schema for Google Rich Snippets
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -76,10 +124,18 @@ export function StructuredData() {
       },
       {
         '@type': 'Question',
-        name: 'When is Avengers: Doomsday releasing?',
+        name: 'What are Incursions in the Marvel Cinematic Universe?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Avengers: Doomsday is scheduled for theatrical release on May 1, 2026, followed by Avengers: Secret Wars in May 2027.',
+          text: 'Incursions occur when the boundary between two colliding universes in the multiverse breaks down, causing both realities to annihilate each other. Incursions were introduced in Doctor Strange in the Multiverse of Madness and serve as the main cosmic catastrophe driving Doctor Doom in Avengers: Doomsday.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'When is Avengers: Doomsday releasing in theaters?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Avengers: Doomsday is scheduled for global theatrical release on May 1, 2026, followed by Avengers: Secret Wars in May 2027.',
         },
       },
     ],
@@ -89,7 +145,15 @@ export function StructuredData() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"

@@ -180,55 +180,57 @@ export default function Home() {
         </div>
 
         {/* Watchlist Presentation: Grid vs Table */}
-        {items.length === 0 ? (
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-12 text-center my-8">
-            <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center mx-auto mb-3 text-zinc-400">
-              <AlertCircle className="w-6 h-6" />
+        <section id="watchlist" className="scroll-mt-24">
+          {items.length === 0 ? (
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-12 text-center my-8">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center mx-auto mb-3 text-zinc-400">
+                <AlertCircle className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold text-lg text-zinc-200 mb-1">No titles found</h3>
+              <p className="text-xs text-zinc-400 max-w-md mx-auto mb-4">
+                No movies or series match your current filter and search criteria.
+              </p>
+              <button
+                onClick={() => {
+                  updateFilter('status', 'all');
+                  updateFilter('type', 'all');
+                  updateFilter('tier', 'all');
+                  updateFilter('phase', 'all');
+                  updateFilter('searchQuery', '');
+                }}
+                className="px-4 py-2 rounded-xl bg-emerald-950 border border-emerald-600/50 text-emerald-400 hover:bg-emerald-900/60 text-xs font-semibold font-mono transition-colors"
+              >
+                Clear All Filters
+              </button>
             </div>
-            <h3 className="font-bold text-lg text-zinc-200 mb-1">No titles found</h3>
-            <p className="text-xs text-zinc-400 max-w-md mx-auto mb-4">
-              No movies or series match your current filter and search criteria.
-            </p>
-            <button
-              onClick={() => {
-                updateFilter('status', 'all');
-                updateFilter('type', 'all');
-                updateFilter('tier', 'all');
-                updateFilter('phase', 'all');
-                updateFilter('searchQuery', '');
-              }}
-              className="px-4 py-2 rounded-xl bg-emerald-950 border border-emerald-600/50 text-emerald-400 hover:bg-emerald-900/60 text-xs font-semibold font-mono transition-colors"
-            >
-              Clear All Filters
-            </button>
-          </div>
-        ) : viewMode === 'grid' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {items.map(item => (
-              <WatchlistCard
-                key={item.id}
-                item={item}
-                userData={userProgress[item.id]}
-                isCustomOrder={filters.sortBy === 'custom'}
-                onToggleCompleted={handleToggleCompletedWithCelebration}
-                onSetRating={setRating}
-                onOpenNotes={item => setActiveNotesItem(item)}
-                onReorder={reorderItem}
-                onDeleteCustom={deleteCustomItem}
-              />
-            ))}
-          </div>
-        ) : (
-          <WatchlistTable
-            items={items}
-            userProgress={userProgress}
-            onToggleCompleted={handleToggleCompletedWithCelebration}
-            onSetRating={setRating}
-            onOpenNotes={item => setActiveNotesItem(item)}
-            onReorder={reorderItem}
-            onDeleteCustom={deleteCustomItem}
-          />
-        )}
+          ) : viewMode === 'grid' ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {items.map(item => (
+                <WatchlistCard
+                  key={item.id}
+                  item={item}
+                  userData={userProgress[item.id]}
+                  isCustomOrder={filters.sortBy === 'custom'}
+                  onToggleCompleted={handleToggleCompletedWithCelebration}
+                  onSetRating={setRating}
+                  onOpenNotes={item => setActiveNotesItem(item)}
+                  onReorder={reorderItem}
+                  onDeleteCustom={deleteCustomItem}
+                />
+              ))}
+            </div>
+          ) : (
+            <WatchlistTable
+              items={items}
+              userProgress={userProgress}
+              onToggleCompleted={handleToggleCompletedWithCelebration}
+              onSetRating={setRating}
+              onOpenNotes={item => setActiveNotesItem(item)}
+              onReorder={reorderItem}
+              onDeleteCustom={deleteCustomItem}
+            />
+          )}
+        </section>
 
         {/* SEO FAQ & Lore Breakdown Section */}
         <SeoFaqSection />
