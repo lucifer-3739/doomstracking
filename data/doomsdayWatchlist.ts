@@ -18,7 +18,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'The genesis of the MCU and Robert Downey Jr.’s iconic legacy as Tony Stark. Understanding RDJ’s hero arc is crucial, as his casting as Doctor Victor von Doom in Avengers: Doomsday creates a profound multiversal dark mirror to Stark’s technological genius and hubris.',
     keyCharacters: ['Tony Stark / Iron Man', 'Pepper Potts', 'James Rhodes', 'Obadiah Stane'],
     tags: ['RDJ Legacy', 'Stark Tech', 'Origin', 'Phase 1'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'the-avengers',
@@ -36,7 +37,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'The first time Earth’s Mightiest Heroes assembled to save New York against Loki and the Chitauri invasion. Establishes the Avengers team dynamic and Tony Stark’s cosmic PTSD that drives his future protective obsessions.',
     keyCharacters: ['Tony Stark', 'Steve Rogers', 'Thor', 'Loki', 'Bruce Banner', 'Natasha Romanoff'],
     tags: ['First Assembly', 'Battle of New York', 'Tesseract', 'Phase 1'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'avengers-age-of-ultron',
@@ -54,7 +56,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Introduces Wanda Maximoff (Scarlet Witch), Vision, and Stark’s philosophy of putting an "armor around the world" — the exact philosophical justification Victor von Doom uses for total global and multiversal subjugation.',
     keyCharacters: ['Tony Stark', 'Wanda Maximoff', 'Ultron', 'Vision', 'Steve Rogers'],
     tags: ['Armor Around the World', 'Sokovia', 'Scarlet Witch Origin', 'Phase 2'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'captain-america-civil-war',
@@ -72,7 +75,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Directed by the Russo Brothers (who return for Avengers: Doomsday). Explores the ideological fracture between heroes and how world powers react when godlike figures operate unchecked — the exact vulnerability Victor von Doom exploits.',
     keyCharacters: ['Tony Stark', 'Steve Rogers', 'Black Panther', 'Spider-Man', 'Zemo'],
     tags: ['Russo Brothers', 'Sokovia Accords', 'Team Fracture', 'Phase 3'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'doctor-strange-1',
@@ -90,7 +94,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Introduces the Masters of the Mystic Arts, the Mirror Dimension, the Dark Dimension, and the Time Stone (Eye of Agamotto). Magic is one of Doctor Doom’s primary weapons alongside advanced science.',
     keyCharacters: ['Stephen Strange', 'Ancient One', 'Wong', 'Mordo', 'Dormammu'],
     tags: ['Mystic Arts', 'Time Stone', 'Multiverse Peeks', 'Phase 3'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'avengers-infinity-war',
@@ -108,7 +113,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'The Russo Brothers’ masterclass in handling a villain-centric cosmic epic. Establishes the scale and stakes of universal devastation that Avengers: Doomsday will elevate to a Multiversal level.',
     keyCharacters: ['Tony Stark', 'Thanos', 'Doctor Strange', 'Thor', 'Scarlet Witch'],
     tags: ['Russo Brothers', 'Cosmic Threat', 'Infinity Stones', 'Phase 3'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'avengers-endgame',
@@ -126,7 +132,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Concludes Tony Stark’s heroic sacrifice ("I am Iron Man") and unlocks time travel / timeline branching via Quantum Realm, creating the fractured multiverse conditions that lead directly to the Multiverse Saga & Doomsday.',
     keyCharacters: ['Tony Stark', 'Steve Rogers', 'Loki (2012 Variant)', 'Thanos'],
     tags: ['Russo Brothers', 'Time Heist', 'Stark Sacrifice', 'Timeline Branches'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'loki-season-1',
@@ -146,7 +153,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Introduces the TVA (Time Variance Authority), the concept of Sacred Timeline, Variants, and the Multiversal War. The death of He Who Remains shatters the timeline and sparks multiversal chaos.',
     keyCharacters: ['Loki', 'Mobius M. Mobius', 'Sylvie', 'He Who Remains'],
     tags: ['TVA', 'Multiverse Genesis', 'Variants', 'Sacred Timeline'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'wandavision',
@@ -166,7 +174,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Establishes Chaos Magic, Wanda’s transformation into the Scarlet Witch, the introduction of the Darkhold, and the birth of Billy & Tommy Maximoff (crucial mystical anchors for multiversal warfare).',
     keyCharacters: ['Wanda Maximoff', 'Vision', 'Agatha Harkness', 'Monica Rambeau'],
     tags: ['Chaos Magic', 'Darkhold', 'Scarlet Witch', 'Hex'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'what-if-season-1',
@@ -186,7 +195,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Demonstrates alternate realities, Supreme Strange’s universe-destroying hubris, and the Guardians of the Multiverse, showcasing how fragile reality becomes when cosmic beings intervene.',
     keyCharacters: ['The Watcher', 'Doctor Strange Supreme', 'Captain Carter', 'Infinity Ultron'],
     tags: ['Alternate Realities', 'Multiverse Collapse', 'Infinity Stones'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'spider-man-no-way-home',
@@ -204,7 +214,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'The first major cinematic multiverse rupture bridging legacy Marvel movie universes (Tobey Maguire, Andrew Garfield, Green Goblin, Doc Ock). Sets the template for cross-dimensional collisions.',
     keyCharacters: ['Peter Parker (MCU)', 'Doctor Strange', 'Peter Parker (Raimi)', 'Peter Parker (Webb)'],
     tags: ['Multiverse Rupture', 'Legacy Crossover', 'Memory Spell', 'Incursions Setup'],
-    whereToWatch: 'Disney+ / Digital'
+    whereToWatch: 'Starz / Apple TV / Amazon Video',
+    platforms: ['Starz', 'Apple TV', 'Amazon Video']
   },
   {
     id: 'doctor-strange-in-the-multiverse-of-madness',
@@ -222,7 +233,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'CRITICAL: Explicitly introduces INCURSIONS (the boundary between two universes colliding and annihilating both — the core premise of Secret Wars and Doom’s universe-saving/conquering role). Also debuts Earth-838’s Illuminati featuring Reed Richards (Fantastic Four) and Clea.',
     keyCharacters: ['Doctor Strange', 'Wanda Maximoff', 'America Chavez', 'Reed Richards (Earth-838)', 'Clea'],
     tags: ['Incursions', 'Illuminati', 'Fantastic Four', 'Darkhold', 'Core Lore'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'shang-chi-and-the-legend-of-the-ten-rings',
@@ -240,7 +252,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Reveals the ancient, thousand-year-old Ten Rings which are sending a beacon signal to a mysterious cosmic/multiversal origin point. Connects to Bruce Banner, Captain Marvel, and Wong.',
     keyCharacters: ['Shang-Chi', 'Wenwu', 'Wong', 'Bruce Banner', 'Captain Marvel'],
     tags: ['Ten Rings Beacon', 'Mystic Realms', 'Ta Lo'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'black-panther-wakanda-forever',
@@ -258,7 +271,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Establishes global resource wars over Vibranium and international geopolitical pressure. In comic lore, Latveria and Victor von Doom repeatedly clash with Wakanda over advanced resources and sovereignty.',
     keyCharacters: ['Shuri / Black Panther', 'Namor', 'Riri Williams / Ironheart', 'Okoye'],
     tags: ['Vibranium War', 'Talokan', 'Geopolitics', 'Ironheart'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'ant-man-and-the-wasp-quantumania',
@@ -276,7 +290,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Explores the Quantum Realm outside of space and time, the Council of Kangs observing timeline interference, and how conquering multiversal warlords map the dying multiverse.',
     keyCharacters: ['Scott Lang', 'Kang the Conqueror', 'Janet van Dyne', 'Cassie Lang'],
     tags: ['Quantum Realm', 'Council of Kangs', 'Multiverse Collapse'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'guardians-of-the-galaxy-vol-3',
@@ -294,7 +309,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Features Adam Warlock, High Evolutionary’s perfectionist hubris (mirroring Doom’s god complex), and concludes the original Guardians roster while leaving cosmic doors wide open.',
     keyCharacters: ['Peter Quill / Star-Lord', 'Rocket Raccoon', 'Adam Warlock', 'Gamora'],
     tags: ['Cosmic Marvel', 'High Evolutionary', 'Adam Warlock'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'loki-season-2',
@@ -314,7 +330,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'CRITICAL PILLAR: Loki sacrifices his freedom to become the God of Stories / Yggdrasil World Tree, physically sustaining all branching timelines in the Multiverse. Victor von Doom’s quest for multiversal supremacy will directly target this multiversal throne.',
     keyCharacters: ['Loki (God of Stories)', 'Mobius', 'Sylvie', 'O.B.', 'Victor Timely'],
     tags: ['God of Stories', 'Yggdrasil Tree', 'Multiverse Core', 'TVA Transformation', 'Essential'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'the-marvels',
@@ -332,7 +349,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'The Quantum Bands tear a direct rip in space-time creating a cosmic incursion. Monica Rambeau crosses into a parallel universe inhabited by Beast (Hank McCoy), Binary (Maria Rambeau), and the X-Men (Earth-10005).',
     keyCharacters: ['Carol Danvers', 'Monica Rambeau', 'Kamala Khan', 'Beast / Hank McCoy'],
     tags: ['X-Men Dimension', 'Multiversal Tear', 'Quantum Bands', 'Post-Credits Incursion'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'deadpool-and-wolverine',
@@ -350,7 +368,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'CRITICAL: Expands on The Void at the end of time, Anchor Beings (whose death collapses entire timelines), TVA rogue factions, Alioth, and unites the Fox X-Men/Marvel universes into the broader MCU Multiverse ahead of Battleworld.',
     keyCharacters: ['Wade Wilson / Deadpool', 'Logan / Wolverine', 'Cassandra Nova', 'Mr. Paradox', 'Blade', 'Gambit'],
     tags: ['Anchor Beings', 'The Void', 'TVA', 'Mutant Integration', 'Essential'],
-    whereToWatch: 'Disney+ / Digital'
+    whereToWatch: 'Disney+ / Apple TV / Amazon',
+    platforms: ['Disney+', 'Apple TV', 'Amazon Video']
   },
   {
     id: 'agatha-all-along',
@@ -370,7 +389,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Explores the deep occult and mystical fabric of the MCU via the Witches’ Road, while officially resurrecting Billy Maximoff / Wiccan, one of the most powerful reality-warpers who plays a pivotal role in multiversal conflicts and Young Avengers.',
     keyCharacters: ['Agatha Harkness', 'Billy Maximoff / Wiccan', 'Rio Vidal / Death', 'Jennifer Kale'],
     tags: ['Witches Road', 'Wiccan', 'Death', 'Mystical Lore'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'daredevil-born-again',
@@ -390,7 +410,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Brings street-level realism and Mayor Wilson Fisk’s anti-vigilante regime in New York, setting the municipal chaos on Earth-616 before cosmic and interdimensional threats converge.',
     keyCharacters: ['Matt Murdock / Daredevil', 'Wilson Fisk / Kingpin', 'Frank Castle / Punisher', 'Bullseye'],
     tags: ['Street Level', 'Kingpin Mayor', 'Vigilante War'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   },
   {
     id: 'captain-america-brave-new-world',
@@ -408,7 +429,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Introduces Adamantium from the Celestial Tiamut corpse, global sovereign power warfare, President Thaddeus Ross / Red Hulk, and sets up the earthbound political climate right as Victor von Doom steps onto the world stage.',
     keyCharacters: ['Sam Wilson / Captain America', 'Thaddeus Ross / Red Hulk', 'Joaquin Torres / Falcon', 'The Leader'],
     tags: ['Adamantium', 'Red Hulk', 'Global War', 'Celestial Tiamut'],
-    whereToWatch: 'Theaters / Disney+'
+    whereToWatch: 'In Theaters / Disney+ (Later)',
+    platforms: ['Theaters', 'Disney+']
   },
   {
     id: 'thunderbolts-star',
@@ -426,7 +448,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'CRITICAL LEAD-IN: Focuses on the darker government ops, the former Avengers / Stark Tower (bought by Val / mysterious benefactor), and introduces Robert Reynolds / Sentry (The Void), whose unmatched power and psychological instability threaten reality.',
     keyCharacters: ['Bucky Barnes / Winter Soldier', 'Yelena Belova', 'John Walker / US Agent', 'Bob / Sentry', 'Valentina Allegra de Fontaine'],
     tags: ['Sentry / Void', 'Avengers Tower', 'Anti-Heroes', 'Phase 5 Finale'],
-    whereToWatch: 'Theaters / Disney+'
+    whereToWatch: 'In Theaters / Disney+ (Later)',
+    platforms: ['Theaters', 'Disney+']
   },
   {
     id: 'the-fantastic-four-first-steps',
@@ -444,7 +467,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'THE ULTIMATE LEAD-IN: Establishes Marvel’s First Family — Reed Richards (Mister Fantastic), Sue Storm, Johnny Storm, and Ben Grimm — in a 1960s retro-futuristic alternate universe facing Galactus & Silver Surfer, establishing the primary rivals and emotional counterpart to Victor von Doom before they cross into Doomsday.',
     keyCharacters: ['Reed Richards / Mister Fantastic (Pedro Pascal)', 'Sue Storm / Invisible Woman (Vanessa Kirby)', 'Johnny Storm / Human Torch (Joseph Quinn)', 'Ben Grimm / The Thing (Ebon Moss-Bachrach)', 'Galactus', 'Silver Surfer'],
     tags: ['Fantastic Four Origin', 'Alternate 1960s Universe', 'Galactus', 'Direct Prequel to Doomsday', 'Must Watch'],
-    whereToWatch: 'Theaters / Disney+'
+    whereToWatch: 'In Theaters / Disney+ (Later)',
+    platforms: ['Theaters', 'Disney+']
   },
   {
     id: 'avengers-doomsday',
@@ -462,7 +486,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'THE EVENT: Directed by the Russo Brothers. Robert Downey Jr. stars as Victor von Doom (Doctor Doom). Incursions threaten to collapse the entire multiverse into oblivion, and Doom rises as either savior or supreme emperor, culminating toward Avengers: Secret Wars.',
     keyCharacters: ['Doctor Victor von Doom (Robert Downey Jr.)', 'Fantastic Four', 'Doctor Strange', 'Loki', 'Thor', 'Sam Wilson', 'Spider-Man'],
     tags: ['Culmination', 'Doctor Doom', 'Robert Downey Jr.', 'Russo Brothers', 'Battleworld Setup'],
-    whereToWatch: 'Theaters'
+    whereToWatch: 'In Theaters (May 1, 2026)',
+    platforms: ['Theaters']
   },
   {
     id: 'fantastic-four-legacy-2005',
@@ -480,7 +505,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Legacy cinematic introduction of Doctor Victor von Doom (Julian McMahon) and Chris Evans as Johnny Storm (who also reprised in Deadpool & Wolverine). Provides historical context on Doom’s cinematic powers.',
     keyCharacters: ['Victor von Doom', 'Reed Richards', 'Sue Storm', 'Johnny Storm'],
     tags: ['Legacy Doom', 'Fox Universe', 'Nostalgia'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+ / Apple TV / Amazon',
+    platforms: ['Disney+', 'Apple TV', 'Amazon Video']
   },
   {
     id: 'x-men-days-of-future-past',
@@ -498,7 +524,8 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Benchmark for timeline rewriting, apocalyptic futures, and bridging multiple generational casts — concepts that the Russo Brothers will amplify for Secret Wars and Doomsday.',
     keyCharacters: ['Wolverine', 'Professor X', 'Magneto', 'Mystique'],
     tags: ['Timeline Rewrite', 'Dystopian Future', 'Mutant Lore'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+ / Apple TV / Amazon',
+    platforms: ['Disney+', 'Apple TV', 'Amazon Video']
   },
   {
     id: 'x-men-97-season-1',
@@ -518,6 +545,7 @@ export const INITIAL_WATCHLIST: WatchlistItem[] = [
     doomsdayRelevance: 'Critically acclaimed animated series expanding on the mutant struggle, Bastion, Asteroid M, and timeline displacement, showing the high-stakes cosmic mutant dynamics heading into Secret Wars.',
     keyCharacters: ['Cyclops', 'Magneto', 'Storm', 'Jean Grey', 'Rogue'],
     tags: ['Mutant War', 'Animation Masterpiece', 'Cosmic Threat'],
-    whereToWatch: 'Disney+'
+    whereToWatch: 'Disney+',
+    platforms: ['Disney+']
   }
 ];

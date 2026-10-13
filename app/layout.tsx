@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { StructuredData } from "../components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +25,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Road to Doomsday: MCU 1-to-N Movie & Series Watch Tracker | Avengers Doomsday Order",
+    default: "Avengers Doomsday Watch Order: MCU 1-to-N Movie & Series Tracker",
     template: "%s | Road to Doomsday Watchlist"
   },
-  description: "The #1 sequential 1-to-N viewing checklist and progress tracker for MCU movies & Disney+ web series leading to Avengers: Doomsday (2026). Track completed vs pending titles, runtime, incursion lore, and Doctor Doom connections.",
+  description: "The definitive sequential 1-to-N watch order for Marvel movies & Disney+ series leading to Avengers: Doomsday (2026). Track watched vs pending titles, stream providers, hours remaining, incursion lore, and Doctor Doom connections.",
   applicationName: "Road to Doomsday",
   authors: [{ name: "Road to Doomsday Team", url: siteUrl }],
   generator: "Next.js",
@@ -135,6 +136,7 @@ export default function RootLayout({
         <link rel="canonical" href={siteUrl} />
       </head>
       <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-100 font-sans selection:bg-emerald-500 selection:text-zinc-950">
+        <StructuredData />
         {children}
       </body>
     </html>

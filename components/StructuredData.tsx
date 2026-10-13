@@ -80,8 +80,16 @@ export function StructuredData() {
       '@type': 'ListItem',
       position: index + 1,
       name: item.title,
-      description: `${item.title} (${item.releaseYear}) - ${item.tier.toUpperCase()} entry in the Road to Doomsday watch order. ${item.doomsdayRelevance}`,
       url: `${baseUrl}#${item.id}`,
+      item: {
+        '@type': item.type === 'movie' ? 'Movie' : 'TVSeries',
+        name: item.title,
+        datePublished: item.releaseYear.toString(),
+        description: item.doomsdayRelevance,
+        image: item.posterUrl,
+        genre: ['Action', 'Adventure', 'Sci-Fi', 'Superhero'],
+        inLanguage: 'en',
+      },
     })),
   };
 
@@ -96,6 +104,14 @@ export function StructuredData() {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'The optimal Road to Doomsday watch order follows a 1 to N sequence starting with Iron Man (2008), Captain America: Civil War, and Avengers: Endgame to understand Tony Stark\'s legacy, followed by Multiverse and Incursion pillars (Loki Seasons 1 & 2, Spider-Man: No Way Home, Doctor Strange in the Multiverse of Madness, Deadpool & Wolverine), and culminating in Phase 5 & 6 lead-ins including Thunderbolts* and The Fantastic Four: First Steps.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Where can I stream and watch MCU movies and series before Avengers: Doomsday?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The majority of Marvel Cinematic Universe movies and all original Disney+ web series (Loki, WandaVision, Agatha All Along) are available to stream on Disney+. Sony\'s Spider-Man: No Way Home is available on Starz, Apple TV, and Amazon Prime Video. Upcoming films like Captain America: Brave New World, Thunderbolts*, and The Fantastic Four: First Steps premiere first in movie theaters before joining Disney+.',
         },
       },
       {
@@ -128,6 +144,14 @@ export function StructuredData() {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Incursions occur when the boundary between two colliding universes in the multiverse breaks down, causing both realities to annihilate each other. Incursions were introduced in Doctor Strange in the Multiverse of Madness and serve as the main cosmic catastrophe driving Doctor Doom in Avengers: Doomsday.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the speedrun or essential watch order for Avengers: Doomsday?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'If you are short on time, watch the 14 Essential tier titles: Iron Man, Civil War, Infinity War, Endgame, Loki (Seasons 1 & 2), WandaVision, Spider-Man: No Way Home, Doctor Strange in the Multiverse of Madness, Deadpool & Wolverine, Captain America: Brave New World, Thunderbolts*, The Fantastic Four: First Steps, and Avengers: Doomsday.',
         },
       },
       {

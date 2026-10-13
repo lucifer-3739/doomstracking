@@ -19,7 +19,6 @@ import { AddCustomItemModal } from '../components/AddCustomItemModal';
 import { StatsSummaryModal } from '../components/StatsSummaryModal';
 import { ShareModal } from '../components/ShareModal';
 import { NotesModal } from '../components/NotesModal';
-import { StructuredData } from '../components/StructuredData';
 import { SeoFaqSection } from '../components/SeoFaqSection';
 
 export default function Home() {
@@ -99,22 +98,8 @@ export default function Home() {
     }
   };
 
-  if (!isClient) {
-    return (
-      <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center text-zinc-400 font-mono">
-        <div className="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/50 flex items-center justify-center animate-pulse mb-4">
-          <ShieldAlert className="w-6 h-6 text-emerald-400" />
-        </div>
-        <p className="text-sm">Initiating Watch Order Tracking Database...</p>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-cosmic-grid flex flex-col bg-zinc-950 text-zinc-100 selection:bg-emerald-500 selection:text-zinc-950">
-      
-      {/* Schema.org Structured Data for Google Rich Snippets */}
-      <StructuredData />
 
       {/* Hidden File Input for JSON restore */}
       <input

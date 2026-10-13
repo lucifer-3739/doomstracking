@@ -17,6 +17,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { WatchlistItem, UserItemData } from '../types/watchlist';
+import { getWatchUrl } from '../data/watchLinks';
 
 interface NotesModalProps {
   isOpen: boolean;
@@ -152,18 +153,12 @@ export function NotesModal({
             </div>
           </div>
           <a
-            href={
-              item.whereToWatch.toLowerCase().includes('theaters')
-                ? `https://www.google.com/search?q=${encodeURIComponent(item.title + ' showtimes tickets')}`
-                : item.whereToWatch.toLowerCase().includes('disney')
-                ? `https://www.disneyplus.com/search?q=${encodeURIComponent(item.title)}`
-                : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + item.title)}`
-            }
+            href={getWatchUrl(item.title, item.whereToWatch, item.watchUrl)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-600/50 text-xs font-mono font-bold text-emerald-300 hover:text-emerald-100 transition-colors shadow-sm"
           >
-            <span>{item.whereToWatch.toLowerCase().includes('theaters') ? 'Tickets' : 'Watch Now'}</span>
+            <span>{item.whereToWatch.toLowerCase().includes('theater') ? 'Tickets' : 'Watch Now'}</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>

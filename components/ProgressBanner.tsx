@@ -17,6 +17,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { WatchlistItem, WatchlistStats } from '../types/watchlist';
+import { getWatchUrl } from '../data/watchLinks';
 
 interface ProgressBannerProps {
   stats: WatchlistStats;
@@ -60,14 +61,17 @@ export function ProgressBanner({
                   Sequential Viewing Tracker (1 to {stats.totalItems})
                 </span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-100 flex items-center gap-3">
-                Avengers: Doomsday Prep Tracker
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-zinc-100 flex items-center gap-3">
+                Avengers: Doomsday Watch Order Tracker
                 {isAllComplete && (
                   <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-300 text-xs font-bold animate-bounce">
                     <Trophy className="w-3.5 h-3.5" /> All Caught Up!
                   </span>
                 )}
               </h1>
+              <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-xl leading-relaxed">
+                The definitive sequential 1-to-N checklist for Marvel movies and Disney+ series. Track completed vs pending titles, stream providers, and Doctor Doom multiverse lore for May 2026.
+              </p>
             </div>
 
             {/* Completion Percentage Badge */}
@@ -208,18 +212,12 @@ export function ProgressBanner({
                     </span>
                   </div>
                   <a
-                    href={
-                      nextUpItem.whereToWatch.toLowerCase().includes('theaters')
-                        ? `https://www.google.com/search?q=${encodeURIComponent(nextUpItem.title + ' showtimes tickets')}`
-                        : nextUpItem.whereToWatch.toLowerCase().includes('disney')
-                        ? `https://www.disneyplus.com/search?q=${encodeURIComponent(nextUpItem.title)}`
-                        : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + nextUpItem.title)}`
-                    }
+                    href={getWatchUrl(nextUpItem.title, nextUpItem.whereToWatch, nextUpItem.watchUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="shrink-0 flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-600/40 text-[10px] font-mono font-medium text-emerald-300 hover:text-emerald-100 transition-colors"
                   >
-                    <span>{nextUpItem.whereToWatch.toLowerCase().includes('theaters') ? 'Tickets' : 'Watch'}</span>
+                    <span>{nextUpItem.whereToWatch.toLowerCase().includes('theater') ? 'Tickets' : 'Watch'}</span>
                     <ExternalLink className="w-2.5 h-2.5" />
                   </a>
                 </div>

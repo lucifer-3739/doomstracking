@@ -390,7 +390,16 @@ export function useWatchlist() {
 
       // Platform Filter (Where to Watch)
       if (filters.platform && filters.platform !== 'all') {
-        if (!item.whereToWatch.toLowerCase().includes(filters.platform.toLowerCase())) return false;
+        const target = filters.platform.toLowerCase();
+        const matchesWhere = item.whereToWatch.toLowerCase().includes(target);
+        const matchesArray = item.platforms?.some(p => p.toLowerCase().includes(target));
+        const matchesDigital = target === 'digital' && (
+          item.whereToWatch.toLowerCase().includes('apple') ||
+          item.whereToWatch.toLowerCase().includes('amazon') ||
+          item.whereToWatch.toLowerCase().includes('starz') ||
+          item.platforms?.some(p => ['apple', 'amazon', 'starz', 'vod', 'digital'].some(d => p.toLowerCase().includes(d)))
+        );
+        if (!matchesWhere && !matchesArray && !matchesDigital) return false;
       }
 
       // Search Filter

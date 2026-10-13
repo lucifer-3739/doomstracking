@@ -25,6 +25,14 @@ const FAQS = [
     a: 'Yes, The Fantastic Four: First Steps (July 2025) is the primary thematic and character lead-in to Avengers: Doomsday. It introduces Pedro Pascal as Reed Richards (Mister Fantastic), Vanessa Kirby as Sue Storm, Joseph Quinn as Johnny Storm, and Ebon Moss-Bachrach as Ben Grimm in an alternate 1960s universe, establishing the primary rivalry with Victor von Doom before they collide in Doomsday.'
   },
   {
+    q: 'Where can I stream and watch MCU movies and series before Avengers: Doomsday?',
+    a: 'The majority of Marvel Cinematic Universe movies and all original Marvel web series (Loki, WandaVision, Agatha All Along) are available to stream on Disney+. Sony\'s Spider-Man: No Way Home is available across Starz, Apple TV, and Amazon Prime Video. Upcoming films including Captain America: Brave New World, Thunderbolts*, and The Fantastic Four: First Steps release in movie theaters first before landing on streaming services.'
+  },
+  {
+    q: 'What is the speedrun or shortest essential watch order for Avengers: Doomsday?',
+    a: 'If you want the fastest route, focus on the 14 Essential tier titles: Iron Man, Captain America: Civil War, Avengers: Infinity War, Avengers: Endgame, Loki (Seasons 1 & 2), WandaVision, Spider-Man: No Way Home, Doctor Strange in the Multiverse of Madness, Deadpool & Wolverine, Captain America: Brave New World, Thunderbolts*, The Fantastic Four: First Steps, and Avengers: Doomsday. This cuts your viewing time in half while retaining 100% of the core multiverse and Doom storylines.'
+  },
+  {
     q: 'What is the release date for Avengers: Doomsday and Avengers: Secret Wars?',
     a: 'Avengers: Doomsday is scheduled for global theatrical release on May 1, 2026. It will be followed one year later by the grand Multiverse Saga finale, Avengers: Secret Wars, on May 7, 2027, both directed by Anthony and Joe Russo.'
   }

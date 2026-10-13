@@ -29,6 +29,8 @@ export interface WatchlistItem {
   keyCharacters: string[];      // e.g., ["Doctor Doom", "Tony Stark", "Reed Richards", "Loki"]
   tags: string[];               // e.g., ["Incursions", "TVA", "Multiverse", "Russo Brothers"]
   whereToWatch: string;         // e.g., "Disney+", "Disney+ / Digital", "Theaters"
+  watchUrl?: string;            // Direct link to title on platform or search
+  platforms?: string[];         // e.g., ["Disney+", "Amazon Prime", "Apple TV", "Starz"]
   isCustom?: boolean;           // User added item
 }
 

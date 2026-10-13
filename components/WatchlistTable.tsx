@@ -16,6 +16,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { WatchlistItem, UserItemData } from '../types/watchlist';
+import { getWatchUrl } from '../data/watchLinks';
 
 interface WatchlistTableProps {
   items: (WatchlistItem & { displayNumber: number })[];
@@ -169,13 +170,7 @@ export function WatchlistTable({
                 {/* Where to Watch */}
                 <td className="py-3.5 px-3 whitespace-nowrap">
                   <a
-                    href={
-                      item.whereToWatch.toLowerCase().includes('theaters')
-                        ? `https://www.google.com/search?q=${encodeURIComponent(item.title + ' showtimes tickets')}`
-                        : item.whereToWatch.toLowerCase().includes('disney')
-                        ? `https://www.disneyplus.com/search?q=${encodeURIComponent(item.title)}`
-                        : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + item.title)}`
-                    }
+                    href={getWatchUrl(item.title, item.whereToWatch, item.watchUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-600/40 text-[11px] font-mono text-emerald-300 hover:text-emerald-200 transition-colors shadow-sm"

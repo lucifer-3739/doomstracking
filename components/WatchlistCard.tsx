@@ -20,6 +20,7 @@ import {
   Trash2
 } from 'lucide-react';
 import { WatchlistItem, UserItemData } from '../types/watchlist';
+import { getWatchUrl } from '../data/watchLinks';
 
 interface WatchlistCardProps {
   item: WatchlistItem & { displayNumber: number };
@@ -184,19 +185,13 @@ export function WatchlistCard({
             </div>
           </div>
           <a
-            href={
-              item.whereToWatch.toLowerCase().includes('theaters')
-                ? `https://www.google.com/search?q=${encodeURIComponent(item.title + ' showtimes tickets')}`
-                : item.whereToWatch.toLowerCase().includes('disney')
-                ? `https://www.disneyplus.com/search?q=${encodeURIComponent(item.title)}`
-                : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + item.title)}`
-            }
+            href={getWatchUrl(item.title, item.whereToWatch, item.watchUrl)}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/40 hover:border-emerald-500 text-[11px] font-mono font-medium text-emerald-300 hover:text-emerald-200 transition-all shadow-sm"
             title={`Stream or find tickets for ${item.title}`}
           >
-            <span>{item.whereToWatch.toLowerCase().includes('theaters') ? 'Tickets' : 'Stream'}</span>
+            <span>{item.whereToWatch.toLowerCase().includes('theater') ? 'Tickets' : 'Stream'}</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>
