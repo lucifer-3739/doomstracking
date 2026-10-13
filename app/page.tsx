@@ -196,6 +196,7 @@ export default function Home() {
                   updateFilter('type', 'all');
                   updateFilter('tier', 'all');
                   updateFilter('phase', 'all');
+                  updateFilter('platform', 'all');
                   updateFilter('searchQuery', '');
                 }}
                 className="px-4 py-2 rounded-xl bg-emerald-950 border border-emerald-600/50 text-emerald-400 hover:bg-emerald-900/60 text-xs font-semibold font-mono transition-colors"

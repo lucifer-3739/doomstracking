@@ -12,7 +12,9 @@ import {
   ArrowRight, 
   Trophy,
   Crown,
-  ListOrdered
+  ListOrdered,
+  Play,
+  ExternalLink
 } from 'lucide-react';
 import { WatchlistItem, WatchlistStats } from '../types/watchlist';
 
@@ -195,11 +197,34 @@ export function ProgressBanner({
                   <span>{nextUpItem.releaseYear}</span>
                   <span>•</span>
                   <span>{formatMinutes(nextUpItem.runtimeMinutes)}</span>
-                  <span>•</span>
-                  <span className="text-emerald-400">{nextUpItem.whereToWatch}</span>
                 </div>
 
-                <p className="text-xs text-zinc-400 line-clamp-3 mt-3 leading-relaxed border-l-2 border-emerald-600/50 pl-2.5">
+                {/* Where to Watch Pill */}
+                <div className="mt-2.5 p-2 rounded-xl bg-emerald-950/40 border border-emerald-800/50 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <Play className="w-3 h-3 text-emerald-400 fill-emerald-400 shrink-0" />
+                    <span className="text-[11px] font-mono text-emerald-300 font-bold truncate">
+                      {nextUpItem.whereToWatch}
+                    </span>
+                  </div>
+                  <a
+                    href={
+                      nextUpItem.whereToWatch.toLowerCase().includes('theaters')
+                        ? `https://www.google.com/search?q=${encodeURIComponent(nextUpItem.title + ' showtimes tickets')}`
+                        : nextUpItem.whereToWatch.toLowerCase().includes('disney')
+                        ? `https://www.disneyplus.com/search?q=${encodeURIComponent(nextUpItem.title)}`
+                        : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + nextUpItem.title)}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-600/40 text-[10px] font-mono font-medium text-emerald-300 hover:text-emerald-100 transition-colors"
+                  >
+                    <span>{nextUpItem.whereToWatch.toLowerCase().includes('theaters') ? 'Tickets' : 'Watch'}</span>
+                    <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                </div>
+
+                <p className="text-xs text-zinc-400 line-clamp-2 mt-2 leading-relaxed border-l-2 border-emerald-600/50 pl-2.5">
                   {nextUpItem.doomsdayRelevance}
                 </p>
               </div>

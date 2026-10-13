@@ -48,12 +48,14 @@ export type StatusFilter = 'all' | 'pending' | 'completed';
 export type TypeFilter = 'all' | 'movie' | 'series';
 export type TierFilter = 'all' | 'essential' | 'recommended' | 'supplemental';
 export type PhaseFilter = 'all' | Phase;
+export type PlatformFilter = 'all' | 'Disney+' | 'Digital' | 'Theaters';
 
 export interface FilterState {
   status: StatusFilter;
   type: TypeFilter;
   tier: TierFilter;
   phase: PhaseFilter;
+  platform: PlatformFilter;
   searchQuery: string;
   sortBy: OrderPreset;
 }

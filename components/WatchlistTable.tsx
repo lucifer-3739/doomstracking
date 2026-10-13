@@ -11,7 +11,9 @@ import {
   ArrowUp, 
   ArrowDown, 
   Trash2,
-  Flame
+  Flame,
+  Play,
+  ExternalLink
 } from 'lucide-react';
 import { WatchlistItem, UserItemData } from '../types/watchlist';
 
@@ -54,6 +56,7 @@ export function WatchlistTable({
             <th className="py-3.5 px-3">Year</th>
             <th className="py-3.5 px-3">Tier</th>
             <th className="py-3.5 px-3">Runtime</th>
+            <th className="py-3.5 px-3">Where to Watch</th>
             <th className="py-3.5 px-4">Story & Doomsday Connection</th>
             <th className="py-3.5 px-3 text-center">Rating</th>
             <th className="py-3.5 px-4 text-right">Actions</th>
@@ -161,6 +164,27 @@ export function WatchlistTable({
                 {/* Runtime */}
                 <td className="py-3.5 px-3 font-mono text-zinc-400 whitespace-nowrap">
                   {formatRuntime(item.runtimeMinutes)}
+                </td>
+
+                {/* Where to Watch */}
+                <td className="py-3.5 px-3 whitespace-nowrap">
+                  <a
+                    href={
+                      item.whereToWatch.toLowerCase().includes('theaters')
+                        ? `https://www.google.com/search?q=${encodeURIComponent(item.title + ' showtimes tickets')}`
+                        : item.whereToWatch.toLowerCase().includes('disney')
+                        ? `https://www.disneyplus.com/search?q=${encodeURIComponent(item.title)}`
+                        : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + item.title)}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-600/40 text-[11px] font-mono text-emerald-300 hover:text-emerald-200 transition-colors shadow-sm"
+                    title={`Watch or get tickets for ${item.title}`}
+                  >
+                    <Play className="w-2.5 h-2.5 text-emerald-400 fill-emerald-400" />
+                    <span>{item.whereToWatch}</span>
+                    <ExternalLink className="w-2.5 h-2.5 text-zinc-400" />
+                  </a>
                 </td>
 
                 {/* Doomsday Connection */}

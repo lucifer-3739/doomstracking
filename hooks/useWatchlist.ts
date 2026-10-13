@@ -26,6 +26,7 @@ export function useWatchlist() {
     type: 'all',
     tier: 'all',
     phase: 'all',
+    platform: 'all',
     searchQuery: '',
     sortBy: 'curated'
   });
@@ -257,6 +258,7 @@ export function useWatchlist() {
       type: 'all',
       tier: 'all',
       phase: 'all',
+      platform: 'all',
       searchQuery: '',
       sortBy: 'curated'
     });
@@ -386,6 +388,11 @@ export function useWatchlist() {
       // Phase Filter
       if (filters.phase !== 'all' && item.phase !== filters.phase) return false;
 
+      // Platform Filter (Where to Watch)
+      if (filters.platform && filters.platform !== 'all') {
+        if (!item.whereToWatch.toLowerCase().includes(filters.platform.toLowerCase())) return false;
+      }
+
       // Search Filter
       if (filters.searchQuery.trim()) {
         const query = filters.searchQuery.toLowerCase().trim();
@@ -394,7 +401,8 @@ export function useWatchlist() {
         const matchesCharacters = item.keyCharacters.some(c => c.toLowerCase().includes(query));
         const matchesTags = item.tags.some(t => t.toLowerCase().includes(query));
         const matchesYear = item.releaseYear.toString().includes(query);
-        if (!matchesTitle && !matchesRelevance && !matchesCharacters && !matchesTags && !matchesYear) {
+        const matchesPlatform = item.whereToWatch.toLowerCase().includes(query);
+        if (!matchesTitle && !matchesRelevance && !matchesCharacters && !matchesTags && !matchesYear && !matchesPlatform) {
           return false;
         }
       }

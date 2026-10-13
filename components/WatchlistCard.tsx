@@ -12,10 +12,12 @@ import {
   ChevronUp, 
   ArrowUp, 
   ArrowDown, 
-  Trash2,
   Clock,
   ShieldAlert,
-  Flame
+  Flame,
+  Play,
+  ExternalLink,
+  Trash2
 } from 'lucide-react';
 import { WatchlistItem, UserItemData } from '../types/watchlist';
 
@@ -168,6 +170,37 @@ export function WatchlistCard({
           </span>
         </div>
 
+        {/* Where to Watch Banner with Direct Platform Link */}
+        <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-gradient-to-r from-emerald-950/40 via-zinc-950 to-zinc-900 border border-emerald-900/50">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="w-6 h-6 rounded-lg bg-emerald-900/60 border border-emerald-600/50 flex items-center justify-center shrink-0">
+              <Play className="w-3 h-3 text-emerald-400 fill-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block leading-tight">Where to Watch</span>
+              <span className="text-xs font-bold text-emerald-300 truncate block">
+                {item.whereToWatch}
+              </span>
+            </div>
+          </div>
+          <a
+            href={
+              item.whereToWatch.toLowerCase().includes('theaters')
+                ? `https://www.google.com/search?q=${encodeURIComponent(item.title + ' showtimes tickets')}`
+                : item.whereToWatch.toLowerCase().includes('disney')
+                ? `https://www.disneyplus.com/search?q=${encodeURIComponent(item.title)}`
+                : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + item.title)}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/40 hover:border-emerald-500 text-[11px] font-mono font-medium text-emerald-300 hover:text-emerald-200 transition-all shadow-sm"
+            title={`Stream or find tickets for ${item.title}`}
+          >
+            <span>{item.whereToWatch.toLowerCase().includes('theaters') ? 'Tickets' : 'Stream'}</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+
         {/* Doomsday Relevance Synopsis */}
         <div className="rounded-xl bg-zinc-950/60 border border-zinc-800/80 p-3.5 text-xs text-zinc-300 leading-relaxed">
           <div className="flex items-center justify-between gap-2 mb-1.5 font-mono text-[10px] uppercase font-bold text-emerald-400">
@@ -175,7 +208,6 @@ export function WatchlistCard({
               <ShieldAlert className="w-3 h-3 text-emerald-400" />
               Doomsday & Story Connection
             </span>
-            <span className="text-zinc-500 font-normal">{item.whereToWatch}</span>
           </div>
           <p className={isExpanded ? 'text-zinc-300' : 'line-clamp-2 text-zinc-400'}>
             {item.doomsdayRelevance}

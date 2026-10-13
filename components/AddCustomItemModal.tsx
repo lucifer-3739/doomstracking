@@ -170,7 +170,19 @@ export function AddCustomItemModal({ isOpen, onClose, onAdd }: AddCustomItemModa
               />
             </div>
 
-            {type === 'series' ? (
+              <div>
+                <label className="block text-zinc-300 font-semibold mb-1">Where to Watch / Platform</label>
+                <input
+                  type="text"
+                  value={whereToWatch}
+                  onChange={e => setWhereToWatch(e.target.value)}
+                  placeholder="e.g. Disney+, Netflix, Prime, Theaters"
+                  className="w-full px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+            </div>
+
+            {type === 'series' && (
               <div>
                 <label className="block text-zinc-300 font-semibold mb-1">Episode Count</label>
                 <input
@@ -181,19 +193,7 @@ export function AddCustomItemModal({ isOpen, onClose, onAdd }: AddCustomItemModa
                   className="w-full px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-emerald-500"
                 />
               </div>
-            ) : (
-              <div>
-                <label className="block text-zinc-300 font-semibold mb-1">Streaming Platform</label>
-                <input
-                  type="text"
-                  value={whereToWatch}
-                  onChange={e => setWhereToWatch(e.target.value)}
-                  placeholder="Disney+ / Theaters"
-                  className="w-full px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-100 focus:outline-none focus:border-emerald-500"
-                />
-              </div>
             )}
-          </div>
 
           {/* Doomsday Connection */}
           <div>

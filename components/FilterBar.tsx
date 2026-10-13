@@ -11,14 +11,16 @@ import {
   LayoutGrid, 
   ListOrdered, 
   ArrowUpDown,
-  Filter
+  Filter,
+  Play
 } from 'lucide-react';
 import { 
   FilterState, 
   StatusFilter, 
   TypeFilter, 
   TierFilter, 
-  PhaseFilter, 
+  PhaseFilter,
+  PlatformFilter,
   OrderPreset, 
   WatchlistStats 
 } from '../types/watchlist';
@@ -73,6 +75,13 @@ export function FilterBar({
     { id: 'Multiverse Saga (Phase 5)', label: 'Multiverse Saga (Phase 5)' },
     { id: 'Multiverse Saga (Phase 6)', label: 'Multiverse Saga (Phase 6 / Doomsday)' },
     { id: 'Legacy / Multiverse Adjacent', label: 'Legacy Multiverse (Fox / X-Men)' }
+  ];
+
+  const platformOptions: { id: PlatformFilter; label: string }[] = [
+    { id: 'all', label: '📺 All Platforms' },
+    { id: 'Disney+', label: '✨ Disney+ Only' },
+    { id: 'Theaters', label: '🍿 Theaters (2025-2026)' },
+    { id: 'Digital', label: '🛒 Digital / VOD' }
   ];
 
   return (
@@ -217,15 +226,29 @@ export function FilterBar({
             ))}
           </select>
 
+          {/* Platform / Where to Watch Filter Dropdown */}
+          <select
+            value={filters.platform || 'all'}
+            onChange={e => onUpdateFilter('platform', e.target.value as PlatformFilter)}
+            className="bg-zinc-900/90 border border-emerald-900/60 text-emerald-300 text-xs px-3 py-1.5 rounded-xl focus:outline-none focus:border-emerald-500 cursor-pointer font-medium"
+          >
+            {platformOptions.map(p => (
+              <option key={p.id} value={p.id} className="bg-zinc-900 text-zinc-200">
+                {p.label}
+              </option>
+            ))}
+          </select>
+
         </div>
 
         {/* Clear Filter button if filters active */}
-        {(filters.type !== 'all' || filters.tier !== 'all' || filters.phase !== 'all' || filters.status !== 'all' || filters.searchQuery) && (
+        {(filters.type !== 'all' || filters.tier !== 'all' || filters.phase !== 'all' || (filters.platform && filters.platform !== 'all') || filters.status !== 'all' || filters.searchQuery) && (
           <button
             onClick={() => {
               onUpdateFilter('type', 'all');
               onUpdateFilter('tier', 'all');
               onUpdateFilter('phase', 'all');
+              onUpdateFilter('platform', 'all');
               onUpdateFilter('status', 'all');
               onUpdateFilter('searchQuery', '');
             }}

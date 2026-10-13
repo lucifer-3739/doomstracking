@@ -12,7 +12,9 @@ import {
   Clock, 
   ShieldAlert,
   Flame,
-  Save
+  Save,
+  Play,
+  ExternalLink
 } from 'lucide-react';
 import { WatchlistItem, UserItemData } from '../types/watchlist';
 
@@ -136,6 +138,34 @@ export function NotesModal({
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Where to Watch Streaming Card */}
+        <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-zinc-900 to-zinc-950 border border-emerald-900/60 mb-6 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-8 h-8 rounded-xl bg-emerald-900/70 border border-emerald-500/50 flex items-center justify-center shrink-0">
+              <Play className="w-4 h-4 text-emerald-400 fill-emerald-400" />
+            </div>
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block">Where to Watch / Stream</span>
+              <span className="text-sm font-bold text-emerald-300 block">{item.whereToWatch}</span>
+            </div>
+          </div>
+          <a
+            href={
+              item.whereToWatch.toLowerCase().includes('theaters')
+                ? `https://www.google.com/search?q=${encodeURIComponent(item.title + ' showtimes tickets')}`
+                : item.whereToWatch.toLowerCase().includes('disney')
+                ? `https://www.disneyplus.com/search?q=${encodeURIComponent(item.title)}`
+                : `https://www.google.com/search?q=${encodeURIComponent('where to watch ' + item.title)}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-600/50 text-xs font-mono font-bold text-emerald-300 hover:text-emerald-100 transition-colors shadow-sm"
+          >
+            <span>{item.whereToWatch.toLowerCase().includes('theaters') ? 'Tickets' : 'Watch Now'}</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
         </div>
 
         {/* Doomsday Connection Recap */}
